@@ -39,4 +39,4 @@ services:
 
 databases:
   - name: saleor-db
-  - ipAllowList: [] # only allow connections from services in this Render account
+    ipAllowList: [] # only allow connections from services in this Render account

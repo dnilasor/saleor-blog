@@ -35,6 +35,22 @@ services:
     type: redis
     ipAllowList: [] # only allow connections from services in this Render account
 
+  - name: saleor-dashboard
+    type: web
+    
+    env: static
+    repo: https://github.com/dnilasor/saleor-dashboard.git
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./build/
+    envVars:
+      - key: API_URI
+        value: https://saelor.onrender.com/graphql/
+      - key: APP_MOUNT_URI
+        value: /dashboard/
+      - key: STATIC_URL
+        value: /dashboard/
+
+
 
 
 databases:

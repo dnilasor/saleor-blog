@@ -20,3 +20,12 @@ services:
         generateValue: true
       - key: PYTHON_VERSION
         value: 3.9.0
+      - key: DATABASE_URL
+        fromDatabase:
+          name: saleor-db
+          property: connectionString
+
+
+databases:
+  - name: saleor-db
+  - ipAllowList: [] # only allow connections from services in this Render account

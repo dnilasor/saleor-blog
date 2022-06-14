@@ -37,7 +37,6 @@ services:
 
   - name: saleor-dashboard
     type: web
-    
     env: static
     repo: https://github.com/dnilasor/saleor-dashboard.git
     buildCommand: npm install && npm run build

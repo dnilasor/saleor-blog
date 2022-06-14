@@ -49,6 +49,19 @@ services:
       - key: STATIC_URL
         value: /dashboard/
 
+  - type: web
+    name: saleor-storefront
+    env: node
+    repo: https://github.com/dnilasor/react-storefront
+    buildCommand: pnpm install && pnpm run build && pnpm run postbuild
+    startCommand: pnpm start
+    envVars:
+      - key: NEXT_PUBLIC_API_URI
+        value: https://saelor.onrender.com/graphql/
+      - key: NEXT_PUBLIC_IMAGE_CONVERSION_FORMATS
+        value: image/avif,image/webp
+
+
 
 
 

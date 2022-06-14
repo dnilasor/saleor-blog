@@ -1,5 +1,5 @@
 services:
-  - name: saelor
+  - name: saleor
     type: web
     env: python
     repo: https://github.com/dnilasor/saleor
@@ -7,16 +7,16 @@ services:
     startCommand: gunicorn --bind :$PORT --workers 4 --worker-class uvicorn.workers.UvicornWorker saleor.asgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
-          value: saleor.settings
+        value: saleor.settings
       - key: DEBUG
-          value: False
+        value: False
       - key: NPM_CONFIG_PRODUCTION
-          value: false
+        value: false
       - key: DEFAULT_FROM_EMAIL
-          value: noreply@example.com
+        value: noreply@example.com
       - key: ENABLE_ACCOUNT_CONFIRMATION_BY_EMAIL
-          value: False
+        value: False
       - key: SECRET_KEY
-          generateValue: true
-            - key: PYTHON_VERSION
-          value: 3.9.0
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: 3.9.0

@@ -24,6 +24,17 @@ services:
         fromDatabase:
           name: saleor-db
           property: connectionString
+      - key: REDIS_URL
+        fromService: saleor-redis
+          type: redis
+          name: saelor-redis
+          property: connectionString
+
+
+    - name: saleor-redis
+      type: redis
+      ipAllowList: [] # only allow connections from services in this Render account
+
 
 
 databases:

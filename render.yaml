@@ -25,7 +25,7 @@ services:
           name: saleor-db
           property: connectionString
       - key: REDIS_URL
-        fromService: saleor-redis
+        fromService:
           type: redis
           name: saelor-redis
           property: connectionString

@@ -31,9 +31,9 @@ services:
           property: connectionString
 
 
-    - name: saleor-redis
-      type: redis
-      ipAllowList: [] # only allow connections from services in this Render account
+  - name: saleor-redis
+    type: redis
+    ipAllowList: [] # only allow connections from services in this Render account
 
 
 

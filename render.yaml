@@ -9,7 +9,7 @@ services:
       - key: DJANGO_SETTINGS_MODULE
         value: saleor.settings
       - key: DEBUG
-        value: False
+        value: True
       - key: NPM_CONFIG_PRODUCTION
         value: false
       - key: DEFAULT_FROM_EMAIL

@@ -4,7 +4,7 @@ services:
     env: python
     repo: https://github.com/dnilasor/saleor
     buildCommand: ./render-build.sh
-    startCommand: ./render-start.sh
+    startCommand: ./render-start.sh server
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: saleor.settings

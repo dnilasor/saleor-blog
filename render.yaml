@@ -92,6 +92,38 @@ services:
         value: False
       - key: SECRET_KEY
         generateValue: true
+  - type: cron
+    name: exchange-rates
+    env: python
+    schedule: "0 1 * * *"
+    startCommand: python manage.py update_exchange_rates --all
+    repo: https://github.com/dnilasor/saleor-blog
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: saleor.settings
+      - key: DEBUG
+        value: False
+      - key: NPM_CONFIG_PRODUCTION
+        value: false
+      - key: DEFAULT_FROM_EMAIL
+        value: noreply@example.com
+      - key: ENABLE_ACCOUNT_CONFIRMATION_BY_EMAIL
+        value: False
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: DATABASE_URL
+        fromDatabase:
+          name: saleor-db-2hex
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: saleor-redis-2hex
+          property: connectionString
+      - key: ALLOWED_CLIENT_HOSTS
+        value: https://saleor-dashboard-2hex.onrender.com, saleor-storefront-2hex:10000
 
 
 

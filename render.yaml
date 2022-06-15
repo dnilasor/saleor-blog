@@ -4,7 +4,7 @@ services:
     env: python
     repo: https://github.com/dnilasor/saleor
     buildCommand: ./render-build.sh
-    startCommand: gunicorn --bind :$PORT --workers 4 --worker-class uvicorn.workers.UvicornWorker saleor.asgi:application
+    startCommand: ./render-start.sh
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: saleor.settings

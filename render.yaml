@@ -29,6 +29,9 @@ services:
           type: redis
           name: saleor-redis-2hex
           property: connectionString
+      - key: ALLOWED_CLIENT_HOSTS
+        value: https://saleor-dashboard-2hex.onrender.com, saleor-storefront-2hex:10000
+
 
 
   - name: saleor-redis

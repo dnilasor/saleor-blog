@@ -45,9 +45,9 @@ services:
       - key: API_URI
         value: https://saleor-z6iv.onrender.com/graphql/
       - key: APP_MOUNT_URI
-        value: /dashboard/
+        value: /
       - key: STATIC_URL
-        value: /dashboard/
+        value: /
 
   - type: web
     name: saleor-storefront

@@ -46,7 +46,7 @@ services:
     staticPublishPath: ./build/
     envVars:
       - key: API_URI
-        value: https://saleor-z6iv.onrender.com/graphql/
+        value: https://saleor-2hex.onrender.com/graphql/
       - key: APP_MOUNT_URI
         value: /dashboard/
 
@@ -58,7 +58,7 @@ services:
     startCommand: pnpm start
     envVars:
       - key: NEXT_PUBLIC_API_URI
-        value: https://saleor-z6iv.onrender.com/graphql/
+        value: https://saleor-2hex.onrender.com/graphql/
       - key: NEXT_PUBLIC_IMAGE_CONVERSION_FORMATS
         value: image/avif,image/webp
 

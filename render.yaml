@@ -42,11 +42,14 @@ services:
     type: web
     env: static
     repo: https://github.com/dnilasor/saleor-dashboard.git
-    buildCommand: npm install && npm run build
+    buildCommand: npm install && API_URI="$TEMP_API_URI/graphql/" npm run build
     staticPublishPath: ./build/
     envVars:
-      - key: API_URI
-        value: https://saleor-2hex.onrender.com/graphql/
+      - key: TEMP_API_URI
+        fromService:
+          name: saleor
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
       - key: APP_MOUNT_URI
         value: /dashboard/
 

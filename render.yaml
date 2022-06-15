@@ -99,6 +99,7 @@ services:
     name: exchange-rates
     env: python
     schedule: "0 1 * * *"
+    buildCommand: pip3 install -r requirements.txt
     startCommand: python manage.py update_exchange_rates --all
     repo: https://github.com/dnilasor/saleor-blog
     envVars:

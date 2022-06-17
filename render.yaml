@@ -52,6 +52,10 @@ services:
           envVarKey: RENDER_EXTERNAL_URL
       - key: APP_MOUNT_URI
         value: /dashboard/
+    routes:
+      - type: rewrite
+        source: /
+        destination: /dashboard/index.html
 
   - type: web
     name: saleor-storefront
@@ -126,8 +130,8 @@ services:
           type: redis
           name: saleor-redis-2hex
           property: connectionString
-      - key: ALLOWED_CLIENT_HOSTS
-        value: https://saleor-dashboard-2hex.onrender.com, saleor-storefront-2hex:10000
+      - key: OPENEXCHANGERATES_API_KEY
+        value: you-complete-me
 
 
 

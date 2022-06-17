@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -e # exit on error
 
-export RSA_PRIVATE_KEY=$(cat /etc/secrets/saleor-key)
+#export RSA_PRIVATE_KEY=$(cat /etc/secrets/saleor-key)
+source variables/keys.sh
+
 
 subcommand=$1
 case $subcommand in

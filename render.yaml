@@ -99,12 +99,13 @@ services:
         value: False
       - key: SECRET_KEY
         generateValue: true
+  
   - type: cron
     name: exchange-rates
     env: python
     schedule: "0 1 * * *"
-    buildCommand: pip3 install -r requirements.txt
-    startCommand: python manage.py update_exchange_rates --all
+    buildCommand: ./render-build.sh
+    startCommand: ./render-start.sh cron
     repo: https://github.com/dnilasor/saleor-blog
     envVars:
       - key: DJANGO_SETTINGS_MODULE

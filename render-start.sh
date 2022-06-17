@@ -11,6 +11,9 @@ case $subcommand in
   worker)
     celery -A saleor --app=saleor.celeryconf:app worker --loglevel=info -E
     ;;
+  cron)
+    python3 manage.py update_exchange_rates --all
+    ;;
   *)
     echo "Unknown subcommand"
     ;;
